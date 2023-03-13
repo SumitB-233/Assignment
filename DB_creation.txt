@@ -1,0 +1,24 @@
+CREATE DATABASE Assignment;
+CREATE TABLE Students (
+  id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  address VARCHAR(255) NOT NULL,
+  course_id INT(11) NOT NULL,
+  FOREIGN KEY (course_id) REFERENCES Courses(id)
+);
+
+CREATE TABLE Courses (
+  id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  description TEXT NOT NULL,
+  instructor_id INT(11) NOT NULL,
+  FOREIGN KEY (instructor_id) REFERENCES Instructor(id)
+);
+
+CREATE TABLE Instructor (
+  id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  address VARCHAR(255) NOT NULL
+);
